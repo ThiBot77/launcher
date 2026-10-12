@@ -62,6 +62,7 @@ import {
   TUTORIALS,
   VEHICLES,
   WEATHER,
+  METAR_AIRPORTS,
   defaultSettings,
   ibis,
   lines,
@@ -246,7 +247,13 @@ export class MockLauncher {
     },
     maps: () => create(MapListSchema, { maps: MAPS }),
     vehicles: () => create(VehicleListSchema, { vehicles: VEHICLES }),
-    weather: () => create(WeatherListSchema, { weather: WEATHER }),
+    weather: ({ metarIcao }) =>
+      create(WeatherListSchema, {
+        weather: WEATHER,
+        automaticMetarStation: METAR_AIRPORTS[1],
+        selectedMetarStation: METAR_AIRPORTS.find((a) => a.icao === metarIcao),
+        airports: METAR_AIRPORTS,
+      }),
     lines: ({ map, date }) => create(LineListSchema, { lines: lines(map ?? '', date ?? '') }),
     minimap: ({ map }) => minimap(map ?? ''),
     ibis: ({ line, hof }) => ibis(line ?? '', hof ?? ''),

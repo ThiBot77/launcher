@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { resolvedMetarStation, toDuty, type Choice } from '../lib/duty';
 import type { MetarStation } from '../types/launcher';
+import { OTHER_CODE, airportChoice, airportList } from '../pages/drive/TimeStep';
 
 const choice = (patch: Partial<Choice> = {}): Choice => ({
   bus: 'bus',
@@ -62,5 +63,15 @@ describe('real weather', () => {
     const selected = choice({ free: false, line: '402', tour: '1', trip: '2' });
     expect(toDuty(selected, 'default', null).wholeTour).toBe(true);
     expect(toDuty({ ...selected, wholeTour: false }, 'default', null).wholeTour).toBe(false);
+  });
+
+  it('offers the listed airports and keeps a code that is not listed as another code', () => {
+    const airports = [station('EDDH'), { icao: 'LFPO', name: 'Paris Orly' } as MetarStation];
+    expect(airportList(airports).map(([code]) => code)).toEqual(['', 'EDDH', 'LFPO', OTHER_CODE]);
+    expect(airportList(airports)[2][1]).toBe('LFPO · Paris Orly');
+    expect(airportChoice('', airports, false)).toBe('');
+    expect(airportChoice('LFPO', airports, false)).toBe('LFPO');
+    expect(airportChoice('EGNX', airports, false)).toBe(OTHER_CODE);
+    expect(airportChoice('', airports, true)).toBe(OTHER_CODE);
   });
 });

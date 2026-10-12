@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Icon } from '../../components/Icon';
 import { Field, Segmented, Select, Slider, Switch } from '../../components/ui';
 import { t } from '../../i18n';
@@ -16,6 +16,18 @@ import type { MetarStation, WeatherInfo } from '../../types/launcher';
 import type { DriveData } from './DrivePage';
 
 const SEASONS: Season[] = ['auto', 'spring', 'summer', 'autumn', 'winter'];
+
+export const OTHER_CODE = '?';
+
+/** The airport list's entry for the station chosen: a listed airport, automatic, or another code being typed. */
+export const airportChoice = (metar: string, airports: MetarStation[], typing: boolean) =>
+  typing || (metar && !airports.some((a) => a.icao === metar)) ? OTHER_CODE : metar;
+
+export const airportList = (airports: MetarStation[]): [string, string][] => [
+  ['', t('drive.weather.automatic')],
+  ...airports.map((a): [string, string] => [a.icao, a.name ? `${a.icao} · ${a.name}` : a.icao]),
+  [OTHER_CODE, t('drive.weather.otherCode')],
+];
 
 function metarStationLabel(
   choice: Choice,
@@ -108,6 +120,7 @@ const fits = (w: WeatherInfo, season: Exclude<Season, 'auto'>) =>
 
 export const TimeStep: React.FC<{ data: DriveData }> = ({ data }) => {
   const { choice, update, server } = useDuty();
+  const [typing, setTyping] = useState(false);
 
   if (server) {
     return (
@@ -131,6 +144,8 @@ export const TimeStep: React.FC<{ data: DriveData }> = ({ data }) => {
     data.automaticMetarStation,
   );
   const presets = data.weather.filter((w) => fits(w, season));
+  const airportPick = airportChoice(choice.metar, data.metarAirports, typing);
+  const airportOptions = airportList(data.metarAirports);
   const options: [string, string, string, string][] = [
     ['', 'map', t('drive.weather.mapDefault'), t('drive.weather.mapDefaultHint')],
     ['cycle', 'autorenew', t('drive.weather.cycle'), t('drive.weather.cycleHint')],
@@ -232,10 +247,21 @@ export const TimeStep: React.FC<{ data: DriveData }> = ({ data }) => {
         {choice.weather === 'metar' && (
           <div className="mt-5 max-w-sm space-y-3">
             <Field label={t('drive.weather.airport')}>
+              <Select
+                value={airportPick}
+                options={airportOptions}
+                onChange={(icao) => {
+                  setTyping(icao === OTHER_CODE);
+                  if (icao !== OTHER_CODE) update({ metar: icao });
+                }}
+              />
+            </Field>
+            {airportPick === OTHER_CODE && (
               <input
                 className="input font-mono uppercase"
                 maxLength={4}
                 placeholder="ICAO"
+                aria-label={t('drive.weather.otherCode')}
                 value={choice.metar}
                 onChange={(e) =>
                   update({
@@ -246,7 +272,7 @@ export const TimeStep: React.FC<{ data: DriveData }> = ({ data }) => {
                   })
                 }
               />
-            </Field>
+            )}
             <p className="text-[14px] text-muted">
               {!choice.metar
                 ? t('drive.weather.stationAutomatic', {

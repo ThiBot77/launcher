@@ -225,6 +225,8 @@ message WeatherList {
   repeated WeatherInfo weather = 1;
   MetarStation automatic_metar_station = 2;
   optional MetarStation selected_metar_station = 3;
+  // The airports of OMSI's METAR list (Weather/ICAO.txt), by code.
+  repeated MetarStation airports = 4;
 }
 
 message LinesArgs {

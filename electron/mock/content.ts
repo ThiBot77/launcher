@@ -20,6 +20,7 @@ import {
   TutorialSchema,
   VehicleInfoSchema,
   WeatherInfoSchema,
+  MetarStationSchema,
   type IbisInfo,
   type LineInfo,
   type Minimap,
@@ -227,6 +228,15 @@ export const WEATHER = list(WeatherInfoSchema, [
     snow: true,
     installed: true,
   },
+]);
+
+export const METAR_AIRPORTS = list(MetarStationSchema, [
+  { icao: 'EDDH', name: 'Hamburg' },
+  { icao: 'EDDB', name: 'Berlin Brandenburg' },
+  { icao: 'EDDM', name: 'München' },
+  { icao: 'EGLL', name: 'London Heathrow' },
+  { icao: 'LFPG', name: 'Paris Charles de Gaulle' },
+  { icao: 'LFPO', name: 'Paris Orly' },
 ]);
 
 interface LineDef {

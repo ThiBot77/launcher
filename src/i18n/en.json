@@ -171,6 +171,7 @@
       "customHint": "Visibility, wind, clouds, rain and road",
       "airport": "Airport",
       "automatic": "Automatic (nearest airport)",
+      "otherCode": "Other code…",
       "stationResolved": "Using {station}",
       "stationAutomatic": "Automatic: {station}",
       "stationEnter": "Enter a four-letter ICAO code, or leave this blank for the nearest airport",

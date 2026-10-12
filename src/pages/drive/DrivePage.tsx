@@ -34,6 +34,7 @@ export interface DriveData {
   weather: WeatherInfo[];
   automaticMetarStation?: MetarStation;
   selectedMetarStation?: MetarStation;
+  metarAirports: MetarStation[];
   lines: LineInfo[] | undefined;
 }
 
@@ -185,6 +186,7 @@ export const DrivePage: React.FC = () => {
           weather: weather.data.weather,
           automaticMetarStation: weather.data.automaticMetarStation,
           selectedMetarStation: weather.data.selectedMetarStation,
+          metarAirports: weather.data.airports,
           lines: lineList,
         }
       : null;

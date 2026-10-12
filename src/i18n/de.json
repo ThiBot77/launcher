@@ -170,6 +170,7 @@
       "customHint": "Sicht, Wind, Wolken, Regen und Straße",
       "airport": "Flughafen",
       "automatic": "Automatisch (nächster Flughafen)",
+      "otherCode": "Anderer Code…",
       "stationResolved": "Verwendet {station}",
       "stationAutomatic": "Automatisch: {station}",
       "stationEnter": "Einen vierstelligen ICAO-Code eingeben oder für den nächsten Flughafen leer lassen",
