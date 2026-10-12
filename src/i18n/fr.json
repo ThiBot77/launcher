@@ -170,6 +170,7 @@
       "customHint": "Visibilité, vent, nuages, pluie et chaussée",
       "airport": "Aéroport",
       "automatic": "Automatique (aéroport le plus proche)",
+      "otherCode": "Autre code…",
       "stationResolved": "Station utilisée : {station}",
       "stationAutomatic": "Automatique : {station}",
       "stationEnter": "Saisissez un code OACI de quatre lettres, ou laissez vide pour l'aéroport le plus proche",
