@@ -1,6 +1,8 @@
 import { getLanguage, t } from '../i18n';
 
-const locale = () => (getLanguage() === 'de' ? 'de-DE' : 'en-GB');
+const LOCALES = { en: 'en-GB', de: 'de-DE', fr: 'fr-FR' } as const;
+
+export const locale = () => LOCALES[getLanguage()];
 
 export function hhmm(seconds: number): string {
   const s = ((Math.round(seconds) % 86400) + 86400) % 86400;

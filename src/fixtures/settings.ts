@@ -318,7 +318,8 @@ function toPage(kind: Kind, v: Value): Value {
       return kind.options.includes(s) ? s : kind.options[0];
     }
     case 'language':
-      return /^(de|ger|german|deutsch)$/i.test(String(v).trim()) ? 'de' : 'en';
+      if (/^(de|ger|german|deutsch)$/i.test(String(v).trim())) return 'de';
+      return /^(fr|fra|french|fran[cç]ais)$/i.test(String(v).trim()) ? 'fr' : 'en';
     case 'graphics':
       return graphicsMode(String(v));
     case 'station':

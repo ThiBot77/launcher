@@ -1,0 +1,294 @@
+{
+  "app": {
+    "title": "Launcher neoOMSI",
+    "brandingAlt": "neoOMSI"
+  },
+  "connection": {
+    "connected": "Connecté",
+    "disconnected": "Déconnecté",
+    "starting": "Démarrage",
+    "handshaking": "Connexion en cours",
+    "error": "Erreur",
+    "connect": "Connecter",
+    "disconnect": "Déconnecter",
+    "reconnect": "Reconnecter"
+  },
+  "diagnostics": {
+    "title": "Diagnostic",
+    "clearLogs": "Effacer les journaux",
+    "noLogs": "Aucun journal de diagnostic enregistré.",
+    "state": "État de la connexion",
+    "pid": "ID du processus",
+    "protocolVersion": "Version du protocole",
+    "engineVersion": "Version du moteur",
+    "capabilities": "Fonctions",
+    "noneNegotiated": "Aucune négociée",
+    "none": "Aucune",
+    "unknown": "Inconnue",
+    "notNegotiated": "Non négociée",
+    "logCount": "({count})",
+    "log": "engine.log"
+  },
+  "theme": {
+    "toLight": "Passer en mode clair",
+    "toDark": "Passer en mode sombre"
+  },
+  "nav": {
+    "drive": "Conduire",
+    "multiplayer": "Multijoueur",
+    "tutorials": "Tutoriels",
+    "mods": "Mods",
+    "timetables": "Horaires",
+    "profile": "Profil",
+    "sessions": "Sessions",
+    "settings": "Paramètres",
+    "controls": "Commandes"
+  },
+  "rail": {
+    "label": "Launcher",
+    "noDriver": "Aucun conducteur",
+    "level": "Niveau {level}",
+    "running": "{count} en cours"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "search": "Rechercher",
+    "filter": "Filtrer…",
+    "noMatch": "Aucun résultat pour « {query} »",
+    "on": "Activé",
+    "off": "Désactivé",
+    "automatic": "Automatique",
+    "browse": "Parcourir",
+    "copy": "Copier",
+    "copied": "Copié",
+    "remove": "Supprimer",
+    "refresh": "Actualiser"
+  },
+  "format": {
+    "minutes": "{m} min",
+    "hours": "{h} h",
+    "hoursMinutes": "{h} h {m} min",
+    "justNow": "à l'instant",
+    "minutesAgo": "il y a {n} min",
+    "hoursAgo": "il y a {n} h",
+    "daysAgo": "il y a {n} jours",
+    "line": "Ligne {name}"
+  },
+  "drive": {
+    "loadFailed": "Impossible de lire le contenu",
+    "reading": "Lecture du dossier OMSI…",
+    "summary": {
+      "freeDrive": "Conduite libre",
+      "lineTour": "{line}, service {tour}",
+      "lineOnly": "{line}, choisissez un service",
+      "serverClock": "L'horloge du serveur",
+      "noBus": "Aucun bus choisi",
+      "leave": "Quitter le serveur",
+      "noLine": "Aucune ligne choisie"
+    },
+    "start": {
+      "drive": "Conduire",
+      "duty": "Commencer le service",
+      "another": "Lancer une autre partie",
+      "continue": "Reprendre là où vous vous étiez arrêté",
+      "chooseFirst": "Choisissez d'abord un bus et une carte.",
+      "alreadyRunning": "Une partie est déjà en cours. Cliquez encore pour en lancer une autre.",
+      "started": "Partie lancée (processus {pid})",
+      "starting": "Lancement…",
+      "loading": "Chargement de la carte {percent} %"
+    },
+    "bus": {
+      "chosen": "Votre bus",
+      "catalogue": "Tous les bus",
+      "favouritesOnly": "Favoris uniquement",
+      "search": "Rechercher un bus…",
+      "none": "Aucun bus trouvé. Essayez une autre recherche.",
+      "unknownMaker": "Constructeur inconnu",
+      "mod": "MOD",
+      "missingBadge": "PIÈCES MANQUANTES",
+      "favourite": "Ajouter aux favoris",
+      "unfavourite": "Retirer des favoris",
+      "livery": "Livrée",
+      "depot": "Fichier de dépôt",
+      "fleetNumber": "Numéro de parc",
+      "plate": "Plaque d'immatriculation",
+      "prevLivery": "Livrée précédente",
+      "nextLivery": "Livrée suivante",
+      "partsMissing": "Pièces manquantes",
+      "details": "Détails du véhicule"
+    },
+    "route": {
+      "map": "Carte",
+      "mapLocked": "{map}, choisie par {server}",
+      "startAt": "Départ à",
+      "autoFirst": "Automatique (le premier de la carte)",
+      "autoNearest": "Automatique (le plus proche du premier arrêt)",
+      "free": "Conduite libre",
+      "freeHint": "La conduite libre vous place sur la carte sans service ni horaire : roulez où vous voulez.",
+      "readingTimetable": "Lecture des horaires…",
+      "line": "Ligne",
+      "noLines": "Aucune ligne à cette date.",
+      "tour": "Service",
+      "tourN": "Service {n}",
+      "runs": "circule {date}",
+      "stopStart": "À l'arrêt {name}"
+    },
+    "time": {
+      "time": "Heure",
+      "date": "Date",
+      "now": "Maintenant",
+      "nowHint": "L'heure et la date actuelles, pour ce départ seulement",
+      "season": "Saison",
+      "seasons": {
+        "auto": "Selon la date",
+        "spring": "Printemps",
+        "summer": "Été",
+        "autumn": "Automne",
+        "winter": "Hiver"
+      },
+      "traffic": "Voitures alentour",
+      "passengers": "Voyageurs",
+      "schedule": "Bus des horaires",
+      "autostart": "Mettre le bus en service au départ (Maj+U)",
+      "onFoot": "Commencer à pied (placer un bus depuis le menu du jeu)",
+      "setBy": "Choisi par {server}",
+      "serverHint": "Le serveur décide de l'heure et de la météo pour tous ses joueurs."
+    },
+    "weather": {
+      "title": "Météo",
+      "mapDefault": "Celle de la carte",
+      "mapDefaultHint": "La météo avec laquelle la carte démarre",
+      "cycle": "Cycle météo",
+      "cycleHint": "Change toutes les 25 à 60 minutes, selon le mois",
+      "metar": "Météo réelle",
+      "metarHint": "La météo réelle d'un aéroport",
+      "metarAt": "Météo réelle à {station}",
+      "metarUnavailable": "Météo réelle indisponible ({station})",
+      "custom": "Météo personnalisée",
+      "customHint": "Visibilité, vent, nuages, pluie et chaussée",
+      "airport": "Aéroport",
+      "automatic": "Automatique (aéroport le plus proche)",
+      "stationResolved": "Station utilisée : {station}",
+      "stationAutomatic": "Automatique : {station}",
+      "stationEnter": "Saisissez un code OACI de quatre lettres, ou laissez vide pour l'aéroport le plus proche",
+      "stationUnavailable": "Ce code OACI est introuvable, la météo réelle ne peut pas être chargée. Vérifiez-le et réessayez.",
+      "keepUpdated": "Mettre à jour",
+      "keepUpdatedHint": "Actualisée au plus toutes les 10 minutes",
+      "fields": {
+        "visibility": "Visibilité",
+        "brightness": "Luminosité",
+        "windDirection": "Direction du vent",
+        "windSpeed": "Vitesse du vent",
+        "temperature": "Température",
+        "humidity": "Humidité",
+        "clouds": "Nuages",
+        "precipitation": "Précipitations",
+        "intensity": "Intensité",
+        "wetness": "Chaussée mouillée",
+        "snowCover": "Couche de neige",
+        "snowOnRoad": "Neige sur la route"
+      },
+      "clouds": {
+        "none": "Dégagé",
+        "few": "Quelques nuages",
+        "scattered": "Épars",
+        "broken": "Fragmenté",
+        "overcast": "Couvert",
+        "stratus": "Stratus bas"
+      },
+      "precip": {
+        "0": "Sec",
+        "1": "Pluie",
+        "2": "Neige"
+      }
+    },
+    "preview": {
+      "loading": "Export du bus depuis le jeu…"
+    },
+    "flow": {
+      "bus": "Bus",
+      "route": "Carte et trajet",
+      "time": "Heure et météo",
+      "roadbook": "Feuille de route",
+      "titles": {
+        "bus": "Choisissez votre bus",
+        "route": "Où roulez-vous ?",
+        "time": "Quand roulez-vous ?",
+        "roadbook": "Votre feuille de route"
+      },
+      "overviewTitle": "Votre trajet",
+      "close": "Fermer",
+      "done": "Terminé",
+      "next": "Suivant : {step}"
+    },
+    "roadbook": {
+      "none": "Aucun service choisi",
+      "noneHint": "Choisissez une ligne et un service dans Carte et trajet pour obtenir une feuille de route.",
+      "startTrip": "Commencer à la course",
+      "wholeTour": "Continuer avec le reste du service",
+      "ibis": "IBIS",
+      "ibisLine": "Ligne",
+      "ibisRoute": "Itinéraire"
+    },
+    "minimap": {
+      "stop": "Arrêt de bus",
+      "entry": "Point d'entrée",
+      "fit": "Ajuster",
+      "loading": "Dessin de la carte vue du ciel…"
+    },
+    "promo": {
+      "badge": "Nouveau",
+      "title": "Voyageurs réalistes",
+      "text": "Des voyageurs de meilleure qualité, aux modèles plus détaillés.",
+      "enable": "Activer",
+      "dismiss": "Masquer",
+      "enabled": "Les voyageurs réalistes sont activés. Vous les verrez à votre prochain trajet."
+    },
+    "pax": {
+      "badge": "Voyageurs",
+      "missingTitle": "Les voyageurs réalistes ne sont pas encore installés",
+      "missingText": "Ils sont activés, mais le pack doit encore être téléchargé (quelques centaines de Mo).",
+      "download": "Télécharger",
+      "retry": "Réessayer",
+      "starting": "Début du téléchargement…",
+      "downloading": "Téléchargement : {percent} % de {size}",
+      "installing": "Installation…",
+      "updateTitle": "Nouveaux voyageurs : version {version}",
+      "updateText": "Une nouvelle version des voyageurs réalistes est disponible.",
+      "outdatedTitle": "Vos voyageurs réalistes ne sont plus à jour",
+      "outdatedText": "neoOMSI a besoin d'un pack plus récent. Sa version n'a pas pu être vérifiée pour l'instant ; Mettre à jour réessaie.",
+      "update": "Mettre à jour",
+      "whatsNew": "Nouveautés",
+      "hideChanges": "Masquer les changements"
+    }
+  },
+  "window": {
+    "minimize": "Réduire",
+    "maximize": "Agrandir",
+    "restore": "Restaurer",
+    "close": "Fermer"
+  },
+  "crash": {
+    "title": "Cette page a rencontré un problème",
+    "text": "Le reste du launcher fonctionne toujours. Réessayez, ou choisissez une autre page à gauche.",
+    "retry": "Réessayer",
+    "copy": "Copier les détails"
+  },
+  "update": {
+    "available": "neoOMSI {version} est disponible",
+    "prerelease": "Préversion",
+    "whatsNew": "Nouveautés",
+    "hide": "Masquer les changements",
+    "download": "Télécharger",
+    "dismiss": "Plus tard",
+    "noNotes": "Cette version ne liste aucun changement.",
+    "install": "Mettre à jour",
+    "starting": "Début du téléchargement…",
+    "downloading": "Téléchargement : {percent} % de {size}",
+    "restarting": "Téléchargé, neoOMSI redémarre pour l'installer…",
+    "retry": "Réessayer",
+    "openPage": "Ouvrir sur GitHub"
+  }
+}

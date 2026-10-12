@@ -1,0 +1,70 @@
+{
+  "host": {
+    "switch": "Héberger mon prochain trajet",
+    "joins": "Le prochain trajet rejoint {name}",
+    "toDrive": "Aller à Conduire"
+  },
+  "join": {
+    "title": "Rejoindre une partie",
+    "placeholder": "Code de session ou adresse du serveur",
+    "hint": "Collez un code donné par un ami, ou une IP / adresse avec son port.",
+    "checking": "Vérification…",
+    "button": "Rejoindre",
+    "joined": "{name} rejoint : choisissez votre bus et votre service, puis lancez"
+  },
+  "sessions": {
+    "host": "Hôte",
+    "guest": "Invité",
+    "with": "avec {host}",
+    "ready": "Vos amis peuvent vous rejoindre de n'importe où",
+    "preparing": "Préparation de l'accès par Internet…",
+    "players": "{count} joueurs",
+    "onePlayer": "1 joueur",
+    "copy": "Copier le code",
+    "copied": "Code de session copié",
+    "connecting": "Connexion à {host}…",
+    "rejected": "Refusé : {reason}"
+  },
+  "servers": {
+    "filter": "Filtrer les serveurs",
+    "summary": "{servers} en ligne · {players} joueurs",
+    "official": "Serveur officiel",
+    "joinedBadge": "Rejoint",
+    "join": "Rejoindre",
+    "leave": "Quitter",
+    "unreachable": "Injoignable : {error}",
+    "mapWeather": "météo de la carte",
+    "notInstalled": "Carte non installée",
+    "mapMissing": "Le serveur joue sur {map}, qui n'est pas installée ici : installez d'abord cette carte.",
+    "players": "{players} joueurs sur {max}",
+    "remove": "Retirer de la liste",
+    "confirmRemove": "Retirer {name} ?",
+    "confirmRemoveText": "Vous pourrez le rajouter avec son adresse.",
+    "none": "Aucun serveur pour l'instant",
+    "noneHint": "Ajoutez un serveur avec l'adresse que son propriétaire vous donne.",
+    "noMatch": "Aucun serveur ne correspond à « {query} »",
+    "loadFailed": "Impossible d'interroger les serveurs",
+    "reading": "Interrogation des serveurs…",
+    "add": "Ajouter un serveur",
+    "addTitle": "Ajouter un serveur",
+    "address": "Adresse",
+    "name": "Nom (facultatif)",
+    "addSubmit": "Ajouter",
+    "added": "{name} a été ajouté à votre liste",
+    "removed": "{name} a été retiré de votre liste",
+    "errors": {
+      "empty": "Saisissez l'adresse du serveur (une IP, un nom ou un lien)",
+      "duplicate": "Ce serveur est déjà dans la liste"
+    },
+    "title": "Serveurs"
+  },
+  "yours": {
+    "title": "Votre partie",
+    "hostHint": "Vos amis rejoignent avec le code que vous obtenez au début du trajet.",
+    "joinsHint": "Choisissez votre bus et votre service dans Conduire, puis lancez."
+  },
+  "views": {
+    "play": "Rejoindre et héberger",
+    "servers": "Liste des serveurs"
+  }
+}

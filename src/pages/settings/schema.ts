@@ -680,6 +680,7 @@ export const TABS: readonly Tab[] = [
           select('language', [
             ['en', 'lang.en'],
             ['de', 'lang.de'],
+            ['fr', 'lang.fr'],
           ]),
           select('units', [
             ['metric', 'opt.metric'],

@@ -1,0 +1,66 @@
+{
+  "goDrive": "Aller conduire",
+  "offline": "Pas connecté au moteur",
+  "offlineHint": "Le launcher voit de nouveau vos parties dès que le moteur tourne.",
+  "running": "En cours",
+  "none": "Aucune partie en cours",
+  "noneHint": "Lancez un service depuis la page Conduire.",
+  "ended": "Terminées récemment",
+  "endedAgo": "terminée {ago}, a duré {ran}",
+  "freeDrive": "Conduite libre",
+  "lineTour": "{line}, service {tour}",
+  "state": {
+    "starting": "Lancement…",
+    "loading": "Chargement {percent} %",
+    "stopping": "Arrêt, enregistrement du trajet…",
+    "clean": "Terminée normalement",
+    "killed": "Fermeture forcée, trajet non enregistré",
+    "crashed": "Plantage (code de sortie {code})",
+    "ended": "Terminée"
+  },
+  "showLog": "Afficher le journal",
+  "hideLog": "Masquer le journal",
+  "openLog": "Ouvrir le fichier journal",
+  "readingLog": "Lecture du journal…",
+  "emptyLog": "Le journal est encore vide.",
+  "stop": {
+    "button": "Arrêter",
+    "busy": "Arrêt…",
+    "title": "Arrêter cette partie ?",
+    "text": "neoOMSI enregistre votre trajet, dit au revoir aux joueurs en réseau et se ferme. S'il n'a pas fini au bout de 8 secondes, il est fermé de force et le trajet n'est pas enregistré.",
+    "confirm": "Arrêter la partie",
+    "saved": "La partie est terminée, votre trajet est enregistré.",
+    "forced": "La partie ne s'est pas terminée à temps et a été fermée de force."
+  },
+  "lan": {
+    "hosting": "Hôte",
+    "joined": "Invité",
+    "hosted": "Votre partie en réseau",
+    "joinedGame": "Partie en réseau",
+    "codeHint": "Vos amis le collent dans Multijoueur → Se connecter avec un code.",
+    "tunnel": "Fonctionne par Internet.",
+    "local": "Fonctionne seulement sur votre réseau local.",
+    "connected": "Connecté à {host}",
+    "connecting": "Connexion…",
+    "rejected": "Refusé : {reason}",
+    "players": "Joueurs ({count})",
+    "passengers": "Voyageurs",
+    "host": "hôte",
+    "chat": "Discussion",
+    "chatHint": "Appuyez sur V dans le jeu pour écrire."
+  },
+  "history": {
+    "title": "Historique",
+    "driver": "Conducteur",
+    "allDrivers": "Tous les conducteurs",
+    "search": "Rechercher un trajet",
+    "loading": "Lecture des trajets…",
+    "failed": "Impossible de lire les trajets",
+    "none": "Aucun trajet pour l'instant",
+    "noneHint": "Chaque service que vous conduisez apparaît ici une fois la partie terminée."
+  },
+  "views": {
+    "running": "En cours",
+    "history": "Historique"
+  }
+}

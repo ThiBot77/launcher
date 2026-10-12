@@ -13,6 +13,7 @@ interface KeyDef {
   dik: number;
   en?: string;
   de?: string;
+  fr?: string;
   alias?: string;
   printable?: boolean;
 }
@@ -21,13 +22,13 @@ const letters = 'QWERTYUIOP ASDFGHJKL ZXCVBNM'.split(' ');
 const letterDik = [0x10, 0x1e, 0x2c];
 
 const KEYS: KeyDef[] = [
-  { code: 'Escape', dik: 0x01, en: 'Esc' },
+  { code: 'Escape', dik: 0x01, en: 'Esc', fr: 'Échap' },
   ...'1234567890'
     .split('')
     .map((d, i) => ({ code: `Digit${d}`, dik: 0x02 + i, en: d, printable: true })),
   { code: 'Minus', dik: 0x0c, en: '-', printable: true },
   { code: 'Equal', dik: 0x0d, en: '=', printable: true },
-  { code: 'Backspace', dik: 0x0e, en: 'Backspace', de: 'Rücktaste' },
+  { code: 'Backspace', dik: 0x0e, en: 'Backspace', de: 'Rücktaste', fr: 'Retour arrière' },
   { code: 'Tab', dik: 0x0f, en: 'Tab' },
   ...letters.flatMap((row, r) =>
     row.split('').map((c, i) => ({
@@ -39,24 +40,24 @@ const KEYS: KeyDef[] = [
   ),
   { code: 'BracketLeft', dik: 0x1a, en: '[', printable: true },
   { code: 'BracketRight', dik: 0x1b, en: ']', printable: true },
-  { code: 'Enter', dik: 0x1c, en: 'Enter', de: 'Eingabe', alias: 'Return' },
-  { code: 'ControlLeft', dik: 0x1d, en: 'Left Ctrl', de: 'Strg links' },
+  { code: 'Enter', dik: 0x1c, en: 'Enter', de: 'Eingabe', fr: 'Entrée', alias: 'Return' },
+  { code: 'ControlLeft', dik: 0x1d, en: 'Left Ctrl', de: 'Strg links', fr: 'Ctrl gauche' },
   { code: 'Semicolon', dik: 0x27, en: ';', printable: true },
   { code: 'Quote', dik: 0x28, en: "'", printable: true },
   { code: 'Backquote', dik: 0x29, en: '`', printable: true },
-  { code: 'ShiftLeft', dik: 0x2a, en: 'Left Shift', de: 'Shift links' },
+  { code: 'ShiftLeft', dik: 0x2a, en: 'Left Shift', de: 'Shift links', fr: 'Maj gauche' },
   { code: 'Backslash', dik: 0x2b, en: '\\', printable: true },
   { code: 'Comma', dik: 0x33, en: ',', printable: true },
   { code: 'Period', dik: 0x34, en: '.', printable: true },
   { code: 'Slash', dik: 0x35, en: '/', printable: true },
-  { code: 'ShiftRight', dik: 0x36, en: 'Right Shift', de: 'Shift rechts' },
-  { code: 'NumpadMultiply', dik: 0x37, en: 'Numpad *', de: 'Num *' },
+  { code: 'ShiftRight', dik: 0x36, en: 'Right Shift', de: 'Shift rechts', fr: 'Maj droite' },
+  { code: 'NumpadMultiply', dik: 0x37, en: 'Numpad *', de: 'Num *', fr: 'Pavé num. *' },
   { code: 'AltLeft', dik: 0x38, en: 'Alt' },
-  { code: 'Space', dik: 0x39, en: 'Space', de: 'Leertaste' },
-  { code: 'CapsLock', dik: 0x3a, en: 'Caps Lock', de: 'Feststelltaste' },
+  { code: 'Space', dik: 0x39, en: 'Space', de: 'Leertaste', fr: 'Espace' },
+  { code: 'CapsLock', dik: 0x3a, en: 'Caps Lock', de: 'Feststelltaste', fr: 'Verr. maj' },
   ...Array.from({ length: 10 }, (_, i) => ({ code: `F${i + 1}`, dik: 0x3b + i, en: `F${i + 1}` })),
-  { code: 'NumLock', dik: 0x45, en: 'Num Lock', de: 'Num' },
-  { code: 'ScrollLock', dik: 0x46, en: 'Scroll Lock', de: 'Rollen' },
+  { code: 'NumLock', dik: 0x45, en: 'Num Lock', de: 'Num', fr: 'Verr. num' },
+  { code: 'ScrollLock', dik: 0x46, en: 'Scroll Lock', de: 'Rollen', fr: 'Arrêt défil' },
   ...(
     [
       [7, 0x47],
@@ -70,10 +71,16 @@ const KEYS: KeyDef[] = [
       [3, 0x51],
       [0, 0x52],
     ] as const
-  ).map(([n, dik]) => ({ code: `Numpad${n}`, dik, en: `Numpad ${n}`, de: `Num ${n}` })),
-  { code: 'NumpadSubtract', dik: 0x4a, en: 'Numpad -', de: 'Num -' },
-  { code: 'NumpadAdd', dik: 0x4e, en: 'Numpad +', de: 'Num +' },
-  { code: 'NumpadDecimal', dik: 0x53, en: 'Numpad .', de: 'Num ,' },
+  ).map(([n, dik]) => ({
+    code: `Numpad${n}`,
+    dik,
+    en: `Numpad ${n}`,
+    de: `Num ${n}`,
+    fr: `Pavé num. ${n}`,
+  })),
+  { code: 'NumpadSubtract', dik: 0x4a, en: 'Numpad -', de: 'Num -', fr: 'Pavé num. -' },
+  { code: 'NumpadAdd', dik: 0x4e, en: 'Numpad +', de: 'Num +', fr: 'Pavé num. +' },
+  { code: 'NumpadDecimal', dik: 0x53, en: 'Numpad .', de: 'Num ,', fr: 'Pavé num. .' },
   { code: 'IntlBackslash', dik: 0x56, en: '<', printable: true },
   { code: 'F11', dik: 0x57, en: 'F11' },
   { code: 'F12', dik: 0x58, en: 'F12' },
@@ -88,26 +95,26 @@ const KEYS: KeyDef[] = [
   { code: 'Convert', dik: 0x79, en: 'Convert' },
   { code: 'NonConvert', dik: 0x7b, en: 'No Convert' },
   { code: 'IntlYen', dik: 0x7d, en: '¥', printable: true },
-  { code: 'NumpadEqual', dik: 0x8d, en: 'Numpad =', de: 'Num =' },
-  { code: 'NumpadEnter', dik: 0x9c, en: 'Numpad Enter', de: 'Num Enter' },
-  { code: 'ControlRight', dik: 0x9d, en: 'Right Ctrl', de: 'Strg rechts' },
-  { code: 'NumpadComma', dik: 0xb3, en: 'Numpad ,', de: 'Num ,' },
-  { code: 'NumpadDivide', dik: 0xb5, en: 'Numpad /', de: 'Num /' },
-  { code: 'PrintScreen', dik: 0xb7, en: 'Print Screen', de: 'Druck' },
-  { code: 'AltRight', dik: 0xb8, en: 'Right Alt', de: 'Alt Gr' },
+  { code: 'NumpadEqual', dik: 0x8d, en: 'Numpad =', de: 'Num =', fr: 'Pavé num. =' },
+  { code: 'NumpadEnter', dik: 0x9c, en: 'Numpad Enter', de: 'Num Enter', fr: 'Pavé num. Entrée' },
+  { code: 'ControlRight', dik: 0x9d, en: 'Right Ctrl', de: 'Strg rechts', fr: 'Ctrl droite' },
+  { code: 'NumpadComma', dik: 0xb3, en: 'Numpad ,', de: 'Num ,', fr: 'Pavé num. ,' },
+  { code: 'NumpadDivide', dik: 0xb5, en: 'Numpad /', de: 'Num /', fr: 'Pavé num. /' },
+  { code: 'PrintScreen', dik: 0xb7, en: 'Print Screen', de: 'Druck', fr: 'Impr. écran' },
+  { code: 'AltRight', dik: 0xb8, en: 'Right Alt', de: 'Alt Gr', fr: 'Alt Gr' },
   { code: 'Pause', dik: 0xc5, en: 'Pause' },
-  { code: 'Home', dik: 0xc7, en: 'Home', de: 'Pos1' },
+  { code: 'Home', dik: 0xc7, en: 'Home', de: 'Pos1', fr: 'Début' },
   { code: 'ArrowUp', dik: 0xc8, en: '↑', alias: 'Up Arrow Pfeil hoch oben' },
-  { code: 'PageUp', dik: 0xc9, en: 'Page Up', de: 'Bild ↑', alias: 'Bild auf' },
+  { code: 'PageUp', dik: 0xc9, en: 'Page Up', de: 'Bild ↑', fr: 'Pg préc', alias: 'Bild auf' },
   { code: 'ArrowLeft', dik: 0xcb, en: '←', alias: 'Left Arrow Pfeil links' },
   { code: 'ArrowRight', dik: 0xcd, en: '→', alias: 'Right Arrow Pfeil rechts' },
-  { code: 'End', dik: 0xcf, en: 'End', de: 'Ende' },
+  { code: 'End', dik: 0xcf, en: 'End', de: 'Ende', fr: 'Fin' },
   { code: 'ArrowDown', dik: 0xd0, en: '↓', alias: 'Down Arrow Pfeil runter unten' },
-  { code: 'PageDown', dik: 0xd1, en: 'Page Down', de: 'Bild ↓', alias: 'Bild ab' },
-  { code: 'Insert', dik: 0xd2, en: 'Insert', de: 'Einfg' },
-  { code: 'Delete', dik: 0xd3, en: 'Del', de: 'Entf', alias: 'Delete' },
-  { code: 'MetaLeft', dik: 0xdb, en: 'Left Win', de: 'Win links' },
-  { code: 'MetaRight', dik: 0xdc, en: 'Right Win', de: 'Win rechts' },
+  { code: 'PageDown', dik: 0xd1, en: 'Page Down', de: 'Bild ↓', fr: 'Pg suiv', alias: 'Bild ab' },
+  { code: 'Insert', dik: 0xd2, en: 'Insert', de: 'Einfg', fr: 'Inser' },
+  { code: 'Delete', dik: 0xd3, en: 'Del', de: 'Entf', fr: 'Suppr', alias: 'Delete' },
+  { code: 'MetaLeft', dik: 0xdb, en: 'Left Win', de: 'Win links', fr: 'Win gauche' },
+  { code: 'MetaRight', dik: 0xdc, en: 'Right Win', de: 'Win rechts', fr: 'Win droite' },
   { code: 'ContextMenu', dik: 0xdd, en: 'Menu', de: 'Menü' },
 ];
 
@@ -134,15 +141,15 @@ export function keyName(dik: number, lang: SupportedLanguage = 'en', layout?: La
     const shown = layout?.get(key.code);
     if (shown && shown.trim()) return shown.toUpperCase();
   }
-  return (lang === 'de' && key.de) || key.en || key.code;
+  return (lang === 'de' && key.de) || (lang === 'fr' && key.fr) || key.en || key.code;
 }
 
 export const keyAlias = (dik: number) => BY_DIK.get(dik)?.alias ?? '';
 
 const MODIFIERS: [number, Record<SupportedLanguage, string>][] = [
-  [KEY_CTRL, { en: 'Ctrl', de: 'Strg' }],
-  [KEY_SHIFT, { en: 'Shift', de: 'Shift' }],
-  [KEY_ALT, { en: 'Alt', de: 'Alt' }],
+  [KEY_CTRL, { en: 'Ctrl', de: 'Strg', fr: 'Ctrl' }],
+  [KEY_SHIFT, { en: 'Shift', de: 'Shift', fr: 'Maj' }],
+  [KEY_ALT, { en: 'Alt', de: 'Alt', fr: 'Alt' }],
 ];
 
 export function keyCaps(

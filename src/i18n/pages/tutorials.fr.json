@@ -1,0 +1,14 @@
+{
+  "loadFailed": "Impossible de lire les tutoriels",
+  "reading": "Recherche des tutoriels…",
+  "none": "Aucun tutoriel trouvé",
+  "noneHint": "Le dossier OMSI 2 n'a pas de dossier Tutorials.",
+  "start": "Commencer",
+  "starting": "Lancement…",
+  "again": "Recommencer",
+  "startedAgo": "Commencé {when}",
+  "started": "La leçon {n} démarre (processus {pid})",
+  "lessonOf": "Leçon {n} sur {count}",
+  "notStarted": "Pas encore commencé",
+  "next": "Leçon suivante"
+}

@@ -4,10 +4,10 @@ import { LineBadge } from '../../components/LineBadge';
 import { ListGroup, ListRow } from '../../components/List';
 import { PanelScreen, SearchField } from '../../components/Screen';
 import { Notice, Segmented, Select, Spinner } from '../../components/ui';
-import { getLanguage, t } from '../../i18n';
+import { t } from '../../i18n';
 import { useDuty } from '../../lib/duty';
 import { call, useCommand } from '../../lib/engine';
-import { duration, hhmm, lineLabel, longDate } from '../../lib/format';
+import { duration, hhmm, lineLabel, locale, longDate } from '../../lib/format';
 import { useNav, useToast } from '../../lib/nav';
 import { filterBy, LONG_LIST } from '../../lib/search';
 import type { LineInfo, MapInfo, TourInfo, TripInfo } from '../../types/launcher';
@@ -35,7 +35,7 @@ import {
 type View = 'departures' | 'tours';
 
 const dayLabel = (iso: string, year = false) =>
-  new Date(`${iso}T12:00:00`).toLocaleDateString(getLanguage() === 'de' ? 'de-DE' : 'en-GB', {
+  new Date(`${iso}T12:00:00`).toLocaleDateString(locale(), {
     weekday: 'short',
     day: 'numeric',
     month: 'short',

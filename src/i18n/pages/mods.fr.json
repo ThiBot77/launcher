@@ -1,0 +1,103 @@
+{
+  "installMod": "Installer un mod…",
+  "dropHint": "Déposez des archives n'importe où, ou",
+  "chooseFolder": "choisissez un dossier",
+  "dropOverlay": "Déposer pour installer",
+  "free": "{size} libres",
+  "openContent": "Ouvrir le dossier de contenu",
+  "open": "Ouvrir",
+  "reading": "Lecture du dossier de contenu…",
+  "loadFailed": "Impossible de lire le dossier de contenu",
+  "cleaned": "Nettoyage après une installation interrompue",
+  "search": "Rechercher un mod",
+  "none": "Aucun mod installé pour l'instant",
+  "noneHint": "Installez-en un avec le bouton à gauche, ou déposez une archive ici.",
+  "noMatch": "Aucun mod ne correspond à « {query} »",
+  "inPlace": "sur place",
+  "archives": "Archives utilisées sur place",
+  "sections": {
+    "installed": "Installés",
+    "installing": "En cours d'installation",
+    "folders": "Dossiers de contenu"
+  },
+  "sheet": {
+    "of": "{n} sur {total}",
+    "reading": "Examen du contenu…",
+    "failed": "Impossible d'examiner le contenu",
+    "archive": "Archive",
+    "unpacked": "Décompressé",
+    "files": "Fichiers",
+    "free": "Espace libre",
+    "fits": "Ça tient : il faut {needed}, {free} libres.",
+    "noFit": "Décompressé, il faut {needed}, seulement {free} libres.",
+    "folder": "Un dossier : ses fichiers sont copiés dans le dossier de contenu.",
+    "mode": "Installer en",
+    "install": "Installer",
+    "skip": "Passer",
+    "started": "Installation de {name}…"
+  },
+  "mode": {
+    "auto": "Auto",
+    "autoWill": {
+      "extract": "Le décompresse, puisqu'il tient sur le disque.",
+      "inplace": "Utilise le .zip tel quel, puisqu'il ne tient pas décompressé."
+    },
+    "extract": "Extraire",
+    "extractHint": "Décompresse une copie. Votre archive reste où elle est.",
+    "inplace": "Sur place",
+    "inplaceHint": "Le jeu lit directement le .zip : presque aucun espace en plus.",
+    "noSpace": "Pas assez d'espace libre pour le décompresser.",
+    "inplaceZipOnly": "Seul un .zip peut être utilisé sur place.",
+    "inplaceNo": "Impossible pour cette archive : {reason}"
+  },
+  "modeName": {
+    "auto": "Automatique",
+    "extract": "Extrait",
+    "inplace": "Sur place"
+  },
+  "state": {
+    "queued": "En attente",
+    "planning": "Préparation",
+    "checking": "Vérification de l'espace",
+    "unpacking": "Décompression",
+    "copying": "Copie",
+    "moving": "Mise en place",
+    "done": "Terminé",
+    "failed": "Échec",
+    "cancelled": "Annulé"
+  },
+  "jobs": {
+    "running": "En cours",
+    "finished": "Terminés",
+    "idle": "Aucune installation en cours",
+    "idleHint": "Déposez une archive ici ou utilisez Installer un mod….",
+    "clear": "Effacer les terminés",
+    "files": "{done} / {total} fichiers",
+    "preparing": "Préparation…",
+    "fromInbox": "depuis la boîte de réception",
+    "installed": "{folder} installé",
+    "keptAside": "{name} mis de côté jusqu'à l'installation de son bus"
+  },
+  "uninstall": {
+    "label": "Désinstaller {name}",
+    "title": "Désinstaller {name} ?",
+    "body": "Rien n'est supprimé : ses dossiers sont déplacés vers {folder}.",
+    "confirm": "Désinstaller",
+    "done": "{name} désinstallé. Ses dossiers sont dans Mods/uninstalled."
+  },
+  "content": {
+    "title": "Dossier de contenu",
+    "empty": "Vides : {names}",
+    "none": "Aucun dossier pour l'instant"
+  },
+  "mounted": {
+    "title": "Mods montés",
+    "hint": "Les dossiers et fichiers ZIP placés ici sont disponibles tout de suite dans neoOMSI.",
+    "folder": "Dossier Mods",
+    "active": "Disponible dans neoOMSI"
+  },
+  "waiting": {
+    "title": "En attente de leur bus",
+    "hint": "Des livrées pour un bus que vous n'avez pas encore. Elles s'installent dès qu'il est là."
+  }
+}
