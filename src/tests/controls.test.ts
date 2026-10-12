@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { actionName } from '../pages/controls/actions';
 import { categoryOf } from '../pages/controls/categories';
 import { create } from '@bufbuild/protobuf';
 import { addKey, conflicts, countChanges, unbind } from '../pages/controls/model';
@@ -30,6 +31,12 @@ describe('controls categories', () => {
     expect(categoryOf('scendes_grabmode', 'game')).toBe('editor');
     expect(categoryOf('quicksave', 'game')).toBe('game');
     expect(categoryOf('toggel_mouse_ctrl', 'game')).toBe('game');
+  });
+
+  it('names the door release for any bus', () => {
+    expect(categoryOf('doors_release', 'game')).toBe('game');
+    expect(actionName('doors_release')).toBe('Door release (passengers open), any bus');
+    expect(actionName('doors_release', 'de')).toBe('Türfreigabe (Fahrgäste öffnen), jeder Bus');
   });
 });
 

@@ -109,6 +109,10 @@ const KNOWN: Names = {
   open_menue: ['Menu', 'Menü'],
   chat_open: ['Multiplayer: write in the chat', 'Multiplayer: im Chat schreiben'],
   chat_toggle: ['Multiplayer: show / hide the chat', 'Multiplayer: Chat ein-/ausblenden'],
+  doors_release: [
+    'Door release (passengers open), any bus',
+    'Türfreigabe (Fahrgäste öffnen), jeder Bus',
+  ],
   sim_pause: ['Pause', 'Pause'],
   screenshot: ['Screenshot', 'Screenshot'],
   quicksave: ['Quicksave', 'Schnellspeichern'],
