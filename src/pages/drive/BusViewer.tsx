@@ -68,8 +68,21 @@ function darkenScriptTextures(root: Object3D) {
   });
 }
 
-function dropShadowBlobs(root: Object3D) {
+// A transparent sheet lying flat under the whole bus is its shadow, whatever its name.
+function isShadowSheet(mesh: Mesh, model: Box3) {
+  const box = new Box3().setFromObject(mesh);
+  const size = box.getSize(new Vector3());
+  const whole = model.getSize(new Vector3());
+  return (
+    size.y < 0.02 &&
+    box.min.y - model.min.y < 0.5 &&
+    Math.min(size.x, size.z) > Math.min(whole.x, whole.z) * 0.8
+  );
+}
+
+export function dropShadowBlobs(root: Object3D) {
   const blobs: Object3D[] = [];
+  const model = new Box3().setFromObject(root);
   root.traverse((o) => {
     const mesh = o as Mesh;
     if (!mesh.isMesh) return;
@@ -77,7 +90,8 @@ function dropShadowBlobs(root: Object3D) {
     if (
       SHADOW.test(mesh.name) ||
       SHADOW.test(mesh.parent?.name ?? '') ||
-      materials.some((m) => SHADOW.test(m?.name ?? ''))
+      materials.some((m) => SHADOW.test(m?.name ?? '')) ||
+      (materials.some((m) => m?.transparent) && isShadowSheet(mesh, model))
     ) {
       blobs.push(mesh);
     }
