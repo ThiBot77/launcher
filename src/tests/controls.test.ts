@@ -33,10 +33,10 @@ describe('controls categories', () => {
     expect(categoryOf('toggel_mouse_ctrl', 'game')).toBe('game');
   });
 
-  it('names the door release for any bus', () => {
+  it('names the door release', () => {
     expect(categoryOf('doors_release', 'game')).toBe('game');
-    expect(actionName('doors_release')).toBe('Door release (passengers open), any bus');
-    expect(actionName('doors_release', 'de')).toBe('Türfreigabe (Fahrgäste öffnen), jeder Bus');
+    expect(actionName('doors_release')).toBe('Door release (passengers open)');
+    expect(actionName('doors_release', 'de')).toBe('Türfreigabe (Fahrgäste öffnen)');
   });
 });
 
